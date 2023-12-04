@@ -1,13 +1,15 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using DataAccess;
+using DataAccess.Entities;
+using Microsoft.EntityFrameworkCore;
 
 Console.WriteLine("Hello, World!");
 
-using var db = new ProductContext();
+using var productContext = new ProductContext();
 
-//db.Products.Add(
-//    new () 
+//productContext.Products.Add(
+//    new()
 //    {
 //        Name = "Banan",
 //        Description = "Ett bär",
@@ -15,7 +17,7 @@ using var db = new ProductContext();
 //    }
 //);
 
-//db.Products.Add(
+//productContext.Products.Add(
 //    new()
 //    {
 //        Name = "Äpple",
@@ -24,16 +26,68 @@ using var db = new ProductContext();
 //    }
 //);
 
+//productContext.SaveChanges();
+
+//var productsBefore = productContext.Products.ToList();
+
+//foreach (var product in productsBefore)
+//{
+//    Console.WriteLine($"{product.Id} {product.Name} {product.Description} {product.Price}");
+//}
+
+//var productsWithConnection = productContext.Products.ToList();
+
+//foreach (var product in productsWithConnection)
+//{
+//    product.Price *= 1.1;
+//}
+
+//productContext.SaveChanges();
+
+//var bananas = productContext.Products.Find(3);
+
+//bananas.Price *= 1.1;
+//bananas.Description = "Ett gult bär";
+
+
+//productContext.SaveChanges();
+
+//var prod1 = productContext.Products.Find(1);
+//var prod2 = productContext.Products.Find(2);
+
+//productContext.Remove(prod1);
+//productContext.Remove(prod2);
+
+//productContext.SaveChanges();
+//var productsStartingWithB = db.Products.Where(p => p.Name.StartsWith("B")).ToList();
+
+//productsStartingWithB.ForEach(p => p.Price *= 1.1);
+
+//db.Products.UpdateRange(productsStartingWithB);
 //db.SaveChanges();
+//foreach (var product in productsStartingWithB)
+//{
+//    Console.WriteLine(product.Name);
+//}
 
-//var products = db.Products.ToList();
-var productsStartingWithB = db.Products.Where(p => p.Name.StartsWith("B")).ToList();
+//var niklasFrukthandel = new Store();
+//niklasFrukthandel.Name = "Niklas Frukthandel";
 
-productsStartingWithB.ForEach(p => p.Price *= 1.1);
+//productContext.Stores.Add(niklasFrukthandel);
 
-db.Products.UpdateRange(productsStartingWithB);
-db.SaveChanges();
-foreach (var product in productsStartingWithB)
-{
-    Console.WriteLine(product.Name);
-}
+var niklasFrukthandel = 
+    productContext.
+        Stores.
+        Include(s=> s.Products).
+        FirstOrDefault(s => s.Id == 1);
+
+var banana = productContext.Products.Find(3);
+var apple = productContext.Products.Find(4);
+
+niklasFrukthandel.Products.Add(banana);
+niklasFrukthandel.Products.Add(apple);
+
+productContext.SaveChanges();
+
+
+Console.ReadKey();

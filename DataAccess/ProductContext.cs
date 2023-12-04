@@ -6,6 +6,7 @@ namespace DataAccess;
 public class ProductContext : DbContext
 {
     public DbSet<Product> Products { get; set; } = null!;
+    public DbSet<Store> Stores { get; set; } = null!;
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
