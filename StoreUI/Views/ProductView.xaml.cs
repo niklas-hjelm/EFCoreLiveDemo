@@ -22,6 +22,7 @@ namespace StoreUI.Views
     /// </summary>
     public partial class ProductView : UserControl
     {
+        //TODO: Private readonly för att inte kunna ändra eller påverka utifrån.
         private readonly ProductRepository _productRepository;
         public ProductView()
         {
@@ -34,7 +35,7 @@ namespace StoreUI.Views
             var products = _productRepository.GetAllProducts();
             foreach (var productModel in products)
             {
-                
+                ProdList.Items.Add(productModel);
             }
         }
     }

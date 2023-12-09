@@ -8,6 +8,7 @@ public class ProductRepository
 {
     private readonly ProductContext _context;
 
+    //TODO: Påminn om Dependency Injection, några kommer att minnas.
     public ProductRepository(ProductContext context)
     {
         _context = context;
@@ -15,6 +16,7 @@ public class ProductRepository
 
     public List<ProductModel> GetAllProducts()
     {
+        //TODO: Påminn om LINQ, några kommer att minnas.
         return _context.Products.Select(
                                   product => new ProductModel
                                   {
@@ -27,6 +29,7 @@ public class ProductRepository
 
     public ProductModel GetProductById(int id)
     {
+        //TODO: Nämn även FirstOrDefault och SingleOrDefault, några kommer att minnas.
         var product = _context.Products.Find(id);
         return new ProductModel
         {

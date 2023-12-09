@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Common.Models;
 
+//TODO: Denna finns för att säkerställa att vi inte använder oss av Entiteter från Databasen i våra vyer.
 public class ProductModel
 {
     public int Id { get; set; }
