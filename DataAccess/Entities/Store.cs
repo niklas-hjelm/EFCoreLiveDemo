@@ -1,6 +1,8 @@
-﻿namespace DataAccess.Entities;
+﻿using Common.Interfaces;
 
-public class Store
+namespace DataAccess.Entities;
+
+public class Store : IEntity<int>
 {
     public int Id { get; set; }
 

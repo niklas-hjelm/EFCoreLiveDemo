@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Common.Interfaces;
 
 namespace DataAccess.Entities;
 
-public class Product
+public class Product : IEntity<int>
 {
     [Key]
     public int Id { get; set; }

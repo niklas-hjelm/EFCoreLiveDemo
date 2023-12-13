@@ -1,7 +1,7 @@
 ﻿using System.Windows;
-using Common.Services;
 using DataAccess;
 using System.Windows.Controls;
+using DataAccess.Services;
 
 namespace StoreUI.Views
 {

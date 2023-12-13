@@ -1,8 +1,7 @@
-﻿using Common.Models;
-using DataAccess;
-using DataAccess.Entities;
+﻿using DataAccess.Entities;
+using Common.Models;
 
-namespace Common.Services;
+namespace DataAccess.Services;
 
 public class ProductRepository
 {

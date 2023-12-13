@@ -1,8 +1,6 @@
-﻿using Common.Models;
-using DataAccess;
-using DataAccess.Entities;
+﻿using DataAccess.Entities;
 
-namespace Common.Services;
+namespace DataAccess.Services;
 
 public class StoreRepository
 {

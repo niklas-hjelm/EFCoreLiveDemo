@@ -8,11 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 
 </Project>
