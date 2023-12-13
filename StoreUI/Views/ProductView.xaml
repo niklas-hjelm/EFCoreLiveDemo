@@ -13,6 +13,10 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
         <Button
             Name="LoadBtn"
@@ -20,9 +24,49 @@
             Click="LoadBtn_OnClick">
             Load
         </Button>
+        <Button
+            Name="SaveBtn"
+            Grid.Row="0"
+            Grid.Column="1"
+            Click="SaveBtn_OnClick">
+            Save
+        </Button>
+
         <ListView
             Name="ProdList"
             Grid.Row="1"
             DisplayMemberPath="Name" />
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="1">Name:</Label>
+            <TextBox
+                Name="NameTxt"
+                Grid.Row="1"
+                Grid.Column="1" />
+
+            <Label Grid.Row="2" Grid.Column="0">Description:</Label>
+            <TextBox
+                Name="DescTxt"
+                Grid.Row="2"
+                Grid.Column="1" />
+
+            <Label Grid.Row="3" Grid.Column="0">Price:</Label>
+            <TextBox
+                Name="PriceTxt"
+                Grid.Row="3"
+                Grid.Column="1" />
+
+        </Grid>
     </Grid>
 </UserControl>
